@@ -23,15 +23,43 @@ void* getnewnode(uint32_t data) {
   return t;
 }
 
-void insertbeginning(uint32_t data) {
-  Node* newnode = getnewnode(data);
-  newnode->next = list.firstNode;
-  list.firstNode = newnode;
+void insertafter(Node *node, Node *newNode) {
+  Node *t = node->next;
+  newNode->prev = node;
+
+  if (t == NULL)
+    list.lastNode = newNode;
+  else {
+    newNode->next = t;
+    t->prev = newNode;
+  }
+  node->next = newNode;
 }
 
-void insertafter(Node *node, Node *newNode) {
-  newNode->next = node->next;
-  node->next = newNode;
+void insertbefore(Node *node, Node *newNode) {
+  Node *t = node->prev;
+  newNode->next = node;
+
+  if (t == NULL)
+    list.firstNode = newNode;
+  else {
+    newNode->prev = t;
+    t->next = newNode;
+  }
+  node->prev = newNode;
+}
+
+void insertbeginning(uint32_t data) {
+  Node *newNode = getnewnode(data);
+
+  if (list.firstNode == NULL) {
+    newNode->prev = NULL;
+    newNode->next = NULL;
+    list.firstNode = newNode;
+    list.lastNode = newNode;
+  } else {
+    insertbefore(list.firstNode, newNode);
+  }
 }
 
 void insert(size_t pos, uint32_t data) {
@@ -53,36 +81,27 @@ void insert(size_t pos, uint32_t data) {
   insertafter(iter, newNode);
 }
 
-void deletebeginning() {
-  Node *t = list.firstNode;
-  if (t == NULL) return;
-  list.firstNode = t->next;
-  free(t);
+void deletenode(Node *node) {
+  Node *t = node->prev;
+  if (t == NULL)
+    list.firstNode = node->next;
+  else
+    t->next = node->next;
+
+  t = node->next;
+  if (t == NULL)
+    list.lastNode = node->prev;
+  else
+    t->prev = node->prev;
 }
 
-void deleteafter(Node *node) {
-  Node *t = node->next;
-  if (t == NULL) return;
-  node->next = t->next;
-  free(t);
-}
-
-void delete(size_t pos) {
-  Node *iter;
-  size_t i;
-
-  if (pos == 1) {
-    deletebeginning();
-    return;
+void delete(uint32_t pos) {
+  Node* node = list.firstNode;
+  size_t p = 1;
+  while (node != NULL && p++ != pos) {
+    node = node->next;
   }
-
-  iter = list.firstNode;
-  i = 2;
-
-  while (iter != NULL && i++ < pos) {
-    iter = iter->next;
-  }
-  deleteafter(iter);
+  deletenode(node);
 }
 
 
