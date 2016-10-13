@@ -1,0 +1,127 @@
+\chapter{Doubly Linked List}
+
+\section{Aim}
+
+To implement linked list operations on a "Doubly Linked List".
+
+\section{Algorithm}
+
+Let the $node$ data structure contain three fields,
+data and references to the next and previous node. Let there
+also be the variables $firstNode$ and $lastNode$ to keep track of the
+first and last nodes in the list, which are $\phi$ when the list
+is empty.
+
+\begin{lstlisting}[style=myC]
+record Node
+{
+	data;
+	Node prev;
+	Node next;
+}
+record List {
+	Node firstNode;
+	Node lastNode;
+}
+
+\end{lstlisting}
+
+\subsection{Insertion}
+
+\begin{algorithmic}
+	\Function{insertAfter}{List $list$, Node $node$, Node $newNode$}
+		\State $newNode.prev = node$
+		\If{$node.next = \phi$}
+			\State $list.lastNode = newNode$
+		\Else
+			\State $newNode.next = node.next$
+			\State $node.next.prev = newNode$
+		\EndIf
+		\State $node.next = newNode$
+	\EndFunction
+	
+	\Function{insertBefore}{List $list$, Node $node$, Node $newNode$}
+		\State $newNode.after = node$
+		\If $node.prev = \phi$
+			\State $list.firstNode = newNode$
+		\Else
+			\State $newNode.prev = node.prev$
+			\State $node.prev.next = newNode$
+		\EndIf
+		\State $node.prev = newNode$
+	\EndFunction
+
+	\Function{insertBeginning}{List $list$, Node $newNode$}
+		\If{$list.firstNode == \phi$}
+			\State $list.firstNode = newNode$
+			\State $list.lastNode = newNode$
+			\State $newNode.prev = \phi$
+			\State $newNode.next = \phi$
+		\Else
+			\State \Call{insertbefore}{list, list.firstNode, newNode}
+		\EndIf
+	\EndFunction
+
+	\Function{insertAfter}{Node $node$, Node $newNode$}
+		\State $newNode.next = node.next$
+		\State $node.next = newNode$
+	\EndFunction
+\end{algorithmic}
+
+\subsection{Deletion}
+
+\begin{algorithmic}
+	\Function{delete}{List $list$, Node $node$}
+		\If{$node.prev = \phi$}
+			\State $list.firstNode = node.next$
+		\Else
+			\State $node.prev.next = node.next$
+		\EndIf
+		\If{$node.next = \phi$}
+			\State $list.lastNode = node.prev$
+		\Else
+			\State $node.next.prev = node.prev$
+		\EndIf
+	\EndFunction
+\end{algorithmic}
+
+\subsection{Traversal}
+
+\begin{algorithmic}
+	\Function{traverse}{List $list$}
+		\State $node \gets list.firstNode$
+		\While{$node$ \textbf{not} $\phi$}
+			\State \Call{foo}{$node.data$}
+			\State $node = node.next$
+		\EndWhile
+	\EndFunction
+\end{algorithmic}
+
+\subsection{Searching}
+
+\begin{algorithmic}
+	\Function{search}{data $x$, List $list$}
+		\State $found \gets false$
+		\State $node \gets list.firstNode$
+		\While{$node$ \textbf{not} $\phi$ \textbf{and} $found$ \textbf{not} $true$ }
+			\If{$node.data = x$}
+				\State $found = true$
+			\EndIf
+		\EndWhile
+		\State \Return{$found$}
+	\EndFunction
+\end{algorithmic}
+
+\section{Code}
+
+\subsubsection{doublylinkedlist.c}
+
+% \lstinputlisting[style=myC]{src/p4/doublylinkedlist.c}
+
+\subsubsection{doublylinkedlist.output}
+
+% \lstinputlisting[]{src/p4/doublylinkedlist.output}
+
+
+\section{Result}
+Doubly Linked List operations were implemented successfully.
