@@ -1,0 +1,78 @@
+\chapter{Sorting Algorithms}
+
+\section{Aim}
+
+To implement program(s) to perform "bubble sort" and "insertion sort" over an array of elements.
+
+\section{Algorithm}
+
+\subsection{Bubble Sort}
+\begin{algorithmic}
+	\Function{swap}{$A, B$}
+		\State $temp \gets A$
+		\State $A = B$
+		\State $B = temp$
+	\EndFunction
+
+	\Function{bubblesort}{$A[]$}
+		\State $i \gets length(A) - 1$
+		\While{$i > 0$}
+			\State $j \gets 1$
+			\While{$j \leq i$}
+				\If{$A[j-1] > A[j]$}
+					\State \Call{swap}{$A[j-1], A[j]$}
+				\EndIf
+				\State $j = j + 1$
+			\EndWhile
+			\State $i = i + 1$
+		\EndWhile
+	\EndFunction
+\end{algorithmic}
+
+
+\subsection{Insertion Sort}
+\begin{algorithmic}
+	\Function{swap}{$A, B$}
+		\State $temp \gets A$
+		\State $A = B$
+		\State $B = temp$
+	\EndFunction
+
+	\Function{insertionsort}{$A[]$}
+		\State $i \gets 1$
+		\While{$i < length(A)$}
+			\State $x \gets A[i]$
+			\State $j \gets i-1$
+			\While{$j >= 0$ \textbf{and} $A[j] > x$}
+				\State $A[j+1] = A[j]$
+				\State $j = j - 1$
+			\EndWhile
+			\State $A[j+1] = x$
+		\EndWhile
+	\EndFunction
+\end{algorithmic}
+
+\section{Code}
+
+\subsection{Bubble Sort}
+
+\subsubsection{bubblesort.c}
+
+\lstinputlisting[style=myC]{src/p2/bubblesort.c}
+
+\subsubsection{bubblesort.output}
+
+\lstinputlisting[]{src/p2/bubblesort.output}
+
+\subsection{Insertion Sort}
+
+\subsubsection{insertionsort.c}
+
+\lstinputlisting[style=myC]{src/p2/insertionsort.c}
+
+\subsubsection{insertionsort.output}
+
+\lstinputlisting[]{src/p2/insertionsort.output}
+
+\section{Result}
+Bubble Sort and Insertion Sort algorithms were implemented successfully.

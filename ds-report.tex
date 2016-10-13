@@ -1,0 +1,56 @@
+\documentclass[a4paper, 10pt]{report}
+
+\author{John Doe}
+\title{15CS201J - Data Structures Lab - Report}
+\date{\today}
+
+\usepackage{geometry}
+	\geometry{
+	a4paper,
+	left=20mm,
+	top=25mm,
+	right=20mm,
+	bottom=25mm
+	}
+
+\usepackage{titlesec}
+	\titleformat{\chapter}[display]
+	{\bfseries\Large}
+	{\filleft \small Experiment \thechapter}
+	{0ex}
+	{\titlerule \vspace{2ex} \filcenter}
+	[\vspace{2ex}\titlerule]
+
+	\titlespacing*{\chapter}{0pt}{*0}{*4}
+
+\usepackage{algpseudocode}
+
+\usepackage{listings}
+	\lstloadlanguages{C}
+	\lstdefinestyle{myC}{
+		language=C,
+		 morekeywords={uint32_t, size_t}
+	}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty} % http://stackoverflow.com/a/501424
+
+\begin{abstract}
+This is the end-semester report submitted for the course of 15CS201J - Data Structures Laboratory.
+It is a report of all the programs performed in the laboratory during the course duration
+of the odd semester in the academic year 2016-17.
+\end{abstract}
+
+\tableofcontents
+\addtocontents{toc}{\protect\thispagestyle{empty}} % http://tex.stackexchange.com/a/2996
+
+\newpage
+\pagenumbering{arabic}
+
+\input{src/p1/doc.tex}
+\input{src/p2/doc.tex}
+
+
+\end{document}

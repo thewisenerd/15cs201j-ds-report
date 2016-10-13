@@ -1,0 +1,88 @@
+\chapter{Searching Algorithms}
+
+\section{Aim}
+
+To implement program(s) to perform "linear search" and "binary search" over an array of elements.
+
+\section{Algorithm}
+
+\subsection{Linear Search}
+\begin{algorithmic}
+	\Function{linearsearch}{$x, A[]$}
+		\State $i \gets 0$
+		\State $l \gets length(A)$
+		\While{$i \leq l$}
+			\If{$x = A[i]$}
+				\State \Return $i$
+			\EndIf
+		\EndWhile
+		\State \Return $\lambda$
+	\EndFunction
+\end{algorithmic}
+
+\subsection{Binary Search}
+\begin{algorithmic}
+	\Function{swap}{$A, B$}
+		\State $temp \gets A$
+		\State $A = B$
+		\State $B = temp$
+	\EndFunction
+
+	\Function{bubblesort}{$A[]$}
+		\State $i \gets length(A) - 1$
+		\While{$i > 0$}
+			\State $j \gets 1$
+			\While{$j \leq i$}
+				\If{$A[j-1] > A[j]$}
+					\State \Call{swap}{$A[j-1], A[j]$}
+				\EndIf
+				\State $j = j + 1$
+			\EndWhile
+			\State $i = i + 1$
+		\EndWhile
+	\EndFunction
+
+	\Function{binarysearch}{$x, A[]$}
+		\State \Call{bubblesort}{$A$}
+		\State $n \gets length(A)$
+		\State $lower \gets 0$
+		\State $upper \gets n-1$
+		\While{$lower \leq upper$}
+			\State $mid \gets (lower + upper) / 2$
+			\If{$x = A[mid]$}
+				\State \Return $mid$
+			\ElsIf{$x < A[mid]$}
+				\State $upper = mid - 1$
+			\Else
+				\State $lower = mid + 1$
+			\EndIf
+
+		\EndWhile
+		\State \Return $\lambda$
+	\EndFunction
+\end{algorithmic}
+
+\section{Code}
+
+\subsection{Linear Search}
+
+\subsubsection{linearsearch.c}
+
+\lstinputlisting[style=myC]{src/p1/linearsearch.c}
+
+\subsubsection{linearsearch.output}
+
+\lstinputlisting[]{src/p1/linearsearch.output}
+
+\subsection{Binary Search}
+
+\subsubsection{binarysearch.c}
+
+\lstinputlisting[style=myC]{src/p1/binarysearch.c}
+
+\subsubsection{binarysearch.output}
+
+\lstinputlisting[]{src/p1/binarysearch.output}
+
+\section{Result}
+Linear Search and Binary Search algorithms were implemented successfully.
