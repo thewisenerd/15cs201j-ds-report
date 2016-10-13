@@ -10,7 +10,6 @@ typedef struct _node {
 } Node;
 
 typedef struct _list {
-  void *firstNode;
   void *lastNode;
 } List;
 

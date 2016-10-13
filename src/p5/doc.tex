@@ -1,0 +1,85 @@
+\chapter{Circular Linked List}
+
+\section{Aim}
+
+To implement linked list operations on a "Circular Linked List".
+
+\section{Algorithm}
+
+Let the $node$ data structure contain three fields,
+data and references to the next and previous node. Let there be a variable $L$ to keep track of the last variable.
+
+\begin{lstlisting}[style=myC]
+record Node
+{
+	data;
+	Node prev;
+	Node next;
+}
+record List {
+	Node lastNode;
+}
+
+\end{lstlisting}
+
+\subsection{Insertion}
+
+\begin{algorithmic}
+	\Function{insertafter}{Node $node$, Node $newNode$}
+		\If{$node = \phi$}
+			\State $newNode.next = newNode$
+		\Else
+			\State $newNode.next = node.next$
+			\State $node.next = newNode$
+		\EndIf
+	\EndFunction
+\end{algorithmic}
+
+\subsection{Deletion}
+
+\subsection{Traversal}
+
+\begin{algorithmic}
+	\Function{iterate}{Node $node$}
+		\If{$node \neq \phi$}
+			\State $iter \gets node$
+			\Repeat
+				\State \Call{foo}{node.data}
+				\State $node = node.next$
+			\Until{$iter \neq node$}
+		\EndIf
+	\EndFunction
+\end{algorithmic}
+
+
+\subsection{Searching}
+
+\begin{algorithmic}
+	\Function{search}{Node $node$, data $x$}
+		\State $found \gets false$
+		\If{$node \neq \phi$}
+			\State $iter \gets node$
+			\Repeat
+				\If{$node.data = x$}
+					\State $found = true$
+				\EndIf
+				\State $node = node.next$
+			\Until{$iter \neq node$ \textbf{and} $found$ \textbf{not} $true$}
+		\EndIf
+		\State \Return $\phi$
+	\EndFunction
+\end{algorithmic}
+
+\section{Code}
+
+\subsubsection{doublylinkedlist.c}
+
+% \lstinputlisting[style=myC]{src/p4/doublylinkedlist.c}
+
+\subsubsection{doublylinkedlist.output}
+
+% \lstinputlisting[]{src/p4/doublylinkedlist.output}
+
+
+\section{Result}
+Circular Linked List operations were implemented successfully.
