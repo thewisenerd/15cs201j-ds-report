@@ -1,4 +1,4 @@
-```
+``` tex
 \begin{abstract}
 This is the end-semester report submitted for the course of 15CS201J - Data Structures Laboratory.
 It is a report of all the programs performed in the laboratory during the course duration
