@@ -46,7 +46,7 @@ record List {
 		\State $list.firstNode = temp.next$
 		\State \Call{destroy}{temp}
 	\EndFunction
-	
+
 	\Function{deleteAfter}{Node $node$}
 		\State $temp \gets node.next$
 		\State $node.next = temp.next$

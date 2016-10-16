@@ -51,13 +51,9 @@ void insert(size_t pos, uint32_t data) {
 
   iter = t->next;
   i = 2;
-  while (iter != NULL && i++ < pos) {
-    iter = iter->next;
-  }
+  while (iter != NULL && i++ < pos) iter = iter->next;
   insertafter(iter, newNode);
-  if (iter == list.lastNode) {
-    list.lastNode = newNode;
-  }
+  if (iter == list.lastNode) list.lastNode = newNode;
 }
 
 void deletebeginning() {
@@ -94,9 +90,7 @@ void delete(size_t pos) {
   t = list.lastNode;
   iter = t->next;
   i = 2;
-  while (iter != NULL && i++ < pos) {
-    iter = iter->next;
-  }
+  while (iter != NULL && i++ < pos) iter = iter->next;
   deleteafter(iter);
 }
 
@@ -120,23 +114,19 @@ void traverse(List list) {
 
 bool search(List list, uint32_t data) {
   Node *first, *iter, *t;
-  bool found = false;
 
-  if (list.lastNode == NULL) {
-    return false;
-  }
+  if (list.lastNode == NULL) return false;
 
   t = list.lastNode;
   first = iter = t->next;
 
   do {
-    if (iter->data == data) {
+    if (iter->data == data)
       return true;
-    }
     iter = iter->next;
   } while (iter != first);
 
-  return found;
+  return false;
 }
 
 int main() {

@@ -39,9 +39,8 @@ void printO(Node* n, int d) {
 
 }
 
-/* Driver program to test above functions*/
-int main()
-{
+
+int main() {
   Node *root  = nN(1);
   root->l  = nN(2);
   root->r = nN(3);

@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct node
-{
+typedef struct node {
   int val;
   void *next;
 } Node;
@@ -16,9 +15,9 @@ void enq(int n) {
   t->val = n;
   t->next = NULL;
 
-  if (rear == NULL) {
+  if (rear == NULL)
     front = rear = t;
-  } else {
+  else {
     rear->next = t;
     rear = t;
   }
@@ -75,16 +74,13 @@ int size() {
   return s;
 }
 
-int main()
-{
+int main() {
+  int i = 0;
 
   front = rear = NULL;
 
-  enq(1);
-  enq(2);
-  enq(3);
-  enq(4);
-  enq(5);
+  while(i++ < 5)
+    enq(i);
 
   display();
 
@@ -97,10 +93,9 @@ int main()
   printf("size of queue: %d\n", size());
   printf("first elem: %d\n", peek());
 
-  deq();
-  deq();
-  deq();
-  deq();
+  i = 4;
+  while(i--)
+    deq();
 
   return 0;
 }

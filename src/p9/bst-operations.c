@@ -1,4 +1,3 @@
-// C program to demonstrate insert operation in binary search tree
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -62,12 +61,8 @@ Node *deleteNode(Node *r, int k) {
   else if (k > r->k)
     r->r = deleteNode(r->r, k);
   else {
-    if (r->l == NULL) { // left node empty
-      Node *t = r->r;
-      free(r);
-      return t;
-    } else if (r->r == NULL) {
-      Node *t = r->l;
+    if (r->l == NULL || r->r == NULL) {
+      Node *t = r->l == NULL ? r->r : r->l;
       free(r);
       return t;
     }
@@ -78,15 +73,7 @@ Node *deleteNode(Node *r, int k) {
   return r;
 }
 
-// Driver Program to test above functions
-int main()
-{
-    /* Let us create following BST
-              50
-           /     \
-          30      70
-         /  \    /  \
-       20   40  60   80 */
+int main() {
     Node *r = NULL, *t;
     r = insert(r, 50);
     insert(r, 30);
@@ -120,7 +107,6 @@ int main()
     printf("inorder: ");
     printO(r);
     printf("\n");
-
 
     return 0;
 }

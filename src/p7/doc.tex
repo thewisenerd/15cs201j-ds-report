@@ -39,7 +39,7 @@ record queue
 		\If{$queue.front = -1$ \textbf{or} $queue.front > queue.rear$}
 			\State \Call{error}{"Queue Underflow!"}
 		\EndIf
-		
+
 		\State $temp \gets queue.Q[queue.front]$
 		\State $queue.front = queue.front + 1$
 		\State \Return{$temp$}
@@ -52,7 +52,7 @@ record queue
 		\If{$queue.front = -1$ \textbf{or} $queue.front > queue.rear$}
 			\State \Call{error}{"Queue Empty!"}
 		\EndIf
-	
+
 		\State $i \gets queue.front$
 		\While{$i < queue.rear$}
 			\State \Call{foo}{$queue.Q[i]$}
@@ -91,7 +91,7 @@ record Queue
 			\State $queue.rear.next = newNode$
 			\State $queue.rear = newNode$
 		\EndIf
-		
+
 	\EndFunction
 \end{algorithmic}
 
@@ -101,13 +101,13 @@ record Queue
 		\If{$queue.front = \phi$}
 			\State \Call{error}{"Queue Underflow!"}
 		\EndIf
-		
+
 		\If{$queue.front.next = \phi$}
 			\State \Call{destroy}{front}
 			\State $queue.front = queue.rear = \phi$
 			\State \Return{}
 		\EndIf
-		
+
 		\State $temp \gets queue.front$
 		\State $queue.front = queue.front.next$
 		\State \Call{foo}{$temp.data$}
@@ -121,7 +121,7 @@ record Queue
 		\If{$queue.front = \phi$}
 			\State \Call{error}{"queue empty!"}
 		\EndIf
-	
+
 		\State $it \gets queue.front$
 		\While{$it \neq \phi$}
 			\State \Call{foo}{$it.data$}

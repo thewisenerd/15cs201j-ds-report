@@ -26,7 +26,7 @@ record stack
 			\State \Call{error}{"Stack Overflow!}
 		\EndIf
 		\State $stack.top = stack.top + 1$
-		\State $stack.S[stack.top] = x$	
+		\State $stack.S[stack.top] = x$
 	\EndFunction
 \end{algorithmic}
 
@@ -49,7 +49,7 @@ record stack
 		\If{$stack.top == 0$}
 			\State \Call{error}{"stack empty!"}
 		\EndIf
-		
+
 		\State $i \gets stack.top$
 		\While{$i > 0$}
 			\State \Call{foo}{stack.S[i]}
@@ -95,7 +95,7 @@ record Stack
 		\If{$stack.top = \phi$}
 			\State \Call{error}{"Stack Underflow!"}
 		\EndIf
-		
+
 		\State $temp \gets stack.top$
 		\State $data \gets stack.top.data$
 		\State $stack.top = stack.top.next$
@@ -110,7 +110,7 @@ record Stack
 		\If{$stack.top = \phi$}
 			\State \Call{error}{"stack empty!"}
 		\EndIf
-	
+
 		\State $it \gets stack.top$
 		\While{$it \neq \phi$}
 			\State \Call{foo}{$it.data$}

@@ -45,9 +45,7 @@ void insert(size_t pos, uint32_t data) {
   newNode = getnewnode(data);
   i = 2;
 
-  while (iter != NULL && i++ < pos) {
-    iter = iter->next;
-  }
+  while (iter != NULL && i++ < pos) iter = iter->next;
   insertafter(iter, newNode);
 }
 
@@ -77,9 +75,7 @@ void delete(size_t pos) {
   iter = list.firstNode;
   i = 2;
 
-  while (iter != NULL && i++ < pos) {
-    iter = iter->next;
-  }
+  while (iter != NULL && i++ < pos) iter = iter->next;
   deleteafter(iter);
 }
 
@@ -94,13 +90,12 @@ void traverse(List list) {
 }
 
 bool search(List list, uint32_t data) {
-  bool found = false;
   Node *node = list.firstNode;
-  while (!( node == NULL || found == true )) {
-    if (node->data == data) found = true;
+  while (node != NULL) {
+    if (node->data == data) return true;
     node = node->next;
   }
-  return found;
+  return false;
 }
 
 int main() {
@@ -112,7 +107,7 @@ int main() {
   insert(1, 60);
   insert(1, 85);
 
-  printf("display: ");
+  printf("traverse: ");
   traverse(list);
 
   printf("insert at [2]: 11\n");
@@ -121,19 +116,19 @@ int main() {
   printf("insert at [3]: 23\n");
   insert(3, 23);
 
-  printf("display: ");
+  printf("traverse: ");
   traverse(list);
 
   printf("delete at beginning.\n");
   delete(1);
 
-  printf("display: ");
+  printf("traverse: ");
   traverse(list);
 
   printf("delete at 3.\n");
   delete(3);
 
-  printf("display: ");
+  printf("traverse: ");
   traverse(list);
 
   printf("search for 13: ");
@@ -141,7 +136,6 @@ int main() {
 
   printf("search for 37: ");
   printf("%sfound\n", search(list, 37) ? "" : "not ");
-
 
   return 0;
 }

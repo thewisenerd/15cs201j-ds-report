@@ -39,7 +39,7 @@ record List {
 		\EndIf
 		\State $node.next = newNode$
 	\EndFunction
-	
+
 	\Function{insertBefore}{List $list$, Node $node$, Node $newNode$}
 		\State $newNode.after = node$
 		\If $node.prev = \phi$

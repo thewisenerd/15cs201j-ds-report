@@ -40,13 +40,10 @@ void display() {
 }
 
 int main() {
+  int i = 0;
 
-  enq(1);
-  enq(2);
-  enq(3);
-  enq(4);
-  enq(5);
-  enq(6);
+  while (i++ < 6)
+    enq(i);
 
   display();
 
@@ -58,10 +55,9 @@ int main() {
   printf("size of queue: %d\n", r - f + 1);
   printf("first elem: %d\n", qa[f]);
 
-  deq();
-  deq();
-  deq();
-  deq();
+  i = 4;
+  while(i--)
+    deq();
 
   return 0;
 }

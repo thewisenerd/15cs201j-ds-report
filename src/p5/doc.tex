@@ -45,7 +45,7 @@ record List {
 		\State $lastNode.next = firstNode.next$
 		\State \Call{destroy}{firstNode}
 	\EndFunction
-	
+
 	\Function{deleteafter}{Node $node$}
 		\State $t \gets node.next$
 		\If{$t = \phi$}

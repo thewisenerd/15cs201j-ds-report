@@ -18,8 +18,7 @@ void push(int n) {
     return;
   }
 
-  st.top++;
-  st.s[st.top] = n;
+  st.s[++st.top] = n;
 
   printf("done!\n");
 }
@@ -33,36 +32,27 @@ int pop() {
     printf("stack underflow!\n");
     return -1;
   }
-  st.top--;
 
-  return st.s[st.top + 1];
+  return st.s[st.top--];
 }
 
 void display() {
   int i;
   printf("display: ");
   if (stempty())
-    printf("stack empty!");
-  else {
-    for (i = st.top; i >= 0; i--) {
-      printf("%d", st.s[i]);
-      if (i) printf(" -> ");
-    }
-  }
-  printf("\n");
+    printf("stack empty!\n");
+  else
+    for (i = st.top; i >= 0; i--)
+      printf("%d%s", st.s[i], i?" -> ":"\n");
 }
 
 int main() {
-  int i;
+  int i = 0;
 
   st.top = -1;
 
-  push(1);
-  push(2);
-  push(3);
-  push(4);
-  push(5);
-  push(6);
+  while (i++ < 6)
+    push(i);
 
   display();
 

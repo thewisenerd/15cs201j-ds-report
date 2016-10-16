@@ -2,10 +2,9 @@
 #include <inttypes.h>
 
 size_t linearsearch(uint32_t x, uint32_t a[], size_t n) {
-  for (size_t i = 0; i < n; i++) {
+  for (size_t i = 0; i < n; i++)
     if (a[i] == x)
       return i;
-  }
   return -1;
 }
 
