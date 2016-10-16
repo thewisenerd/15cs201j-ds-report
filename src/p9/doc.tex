@@ -1,0 +1,86 @@
+\chapter{Binary Search Tree}
+
+\section{Aim}
+
+To implement a program to perform different Binary Search Tree operations on
+a Binary Tree.
+
+\section{Algorithm}
+
+Let us assume the Binary Search Tree to have nodes that contain three fields, data and the 
+references to the left and right child nodes. Let there also be a variable $root$
+to keep track of the root node of the Binary Tree, which is $\phi$ when the tree is empty.
+\begin{lstlisting}[style=myC]
+record Node
+{
+	data;
+	Node left;
+	Node right;
+}
+\end{lstlisting}
+
+\subsection{Insertion}
+
+\begin{algorithmic}
+	\Function{insert}{Node $n$, $k$}
+		\If{$n = \phi$}
+			\State \Return \Call{getnewnode}{k}
+		\EndIf
+		\If{$k < n.data$}
+			\State $n.left = \Call{insert}{n.left, k}$
+		\ElsIf{$k > n.data$}
+			\State $n.right = \Call{insert}{n.right, k}$
+		\EndIf
+		\State \Return{$n$}
+	\EndFunction
+\end{algorithmic}
+
+\subsection{Deletion}
+\begin{algorithmic}
+	\Function{minvn}{Node $n$}
+		\State $c \gets n$
+		\While{$c.left \neq \phi$}
+			\State $c = c.left$
+		\EndWhile
+		\State \Return{$c$}
+	\EndFunction
+	
+	\Function{delete}{Node $r$, $k$}
+		\If{$r = \phi$}
+			\State \Return{$r$}
+		\EndIf
+		\If{$k < r.data$}
+			\State $r.left = $\Call{delete}{$r.left, k$}
+		\ElsIf{$k > r.data$}
+			\State $r.right = $\Call{delete}{$r.right, k$}
+		\Else
+			\If{$r.left = \phi$}
+				\State $t \gets r.right$
+				\State \Call{destroy}{r}
+				\State \Return $t$
+			\ElsIf{$r.right = \phi$}
+				\State $t \gets r.left$
+				\State \Call{destroy}{r}
+				\State \Return $t$
+			\Else
+				\State $t \gets $\Call{minvn}{$r.right$}
+				\State $r.data = t.data$
+				\State $r.right = $\Call{delete}{$r.right, k$}
+			\EndIf
+		\EndIf
+		\State \Return $r$
+	\EndFunction
+\end{algorithmic}
+
+\section{Code}
+
+\subsubsection{bst-operations.c}
+
+\lstinputlisting[style=myC]{src/p9/bst-operations.c}
+
+\subsubsection{bst-operations.output}
+
+\lstinputlisting[style=myC]{src/p9/bst-operations.output}
+
+\section{Result}
+Binary Search Tree operations were successfully performed.

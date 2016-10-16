@@ -1,0 +1,156 @@
+\chapter{Queues}
+
+\section{Aim}
+
+To implement program(s) to perform queue operations using arrays and linked lists.
+
+\section{Algorithm}
+
+\subsection{Queue using Array}
+
+\subsubsection
+Let the $queue$ data structure contain the array $Q$ of size $MAX$ and the variables $front$ and $rear$ to keep track of the queue elements.
+\begin{lstlisting}[style=myC]
+record queue
+{
+	Q[MAX];
+	front;
+	rear;
+}
+\end{lstlisting}
+
+\subsubsection{Enqueue}
+\begin{algorithmic}
+	\Function{enqueue}{$x$}
+		\If{$queue.rear - queue.front == MAX-1$}
+			\State \Call{error}{"Queue Overflow!}
+		\EndIf
+		\If{$queue.front = -1$}
+			\State $queue.front = 0$
+		\EndIf
+		\State $queue.rear = queue.rear + 1$
+		\State $queue.Q[queue.rear] = x$
+	\EndFunction
+\end{algorithmic}
+
+\subsubsection{Dequeue}
+\begin{algorithmic}
+	\Function{dequeue}{}
+		\If{$queue.front = -1$ \textbf{or} $queue.front > queue.rear$}
+			\State \Call{error}{"Queue Underflow!"}
+		\EndIf
+		
+		\State $temp \gets queue.Q[queue.front]$
+		\State $queue.front = queue.front + 1$
+		\State \Return{$temp$}
+	\EndFunction
+\end{algorithmic}
+
+\subsubsection{Traverse}
+\begin{algorithmic}
+	\Function{traverse}{}
+		\If{$queue.front = -1$ \textbf{or} $queue.front > queue.rear$}
+			\State \Call{error}{"Queue Empty!"}
+		\EndIf
+	
+		\State $i \gets queue.front$
+		\While{$i < queue.rear$}
+			\State \Call{foo}{$queue.Q[i]$}
+			\State $i = i + 1$
+		\EndWhile
+	\EndFunction
+\end{algorithmic}
+
+\subsection{Queue using Linked List}
+Let the $node$ data structure contain two fields,
+data and the reference to the next node. Let there
+also be the variables $front$ and $rear$ to keep track of the
+queue elements, which are $\phi$ when the queue is empty. The $count$
+variable keeps a count of the number of elements in the queue.
+
+\begin{lstlisting}[style=myC]
+record Node
+{
+	data;
+	Node next;
+}
+
+record Queue
+{
+	Node front;
+	Node rear;
+}
+\end{lstlisting}
+
+\subsubsection{Enqueue}
+\begin{algorithmic}
+	\Function{enqueue}{$newNode$}
+		\If{$queue.rear = \phi$}
+			\State $queue.front = queue.rear = newNode$
+		\Else
+			\State $queue.rear.next = newNode$
+			\State $queue.rear = newNode$
+		\EndIf
+		
+	\EndFunction
+\end{algorithmic}
+
+\subsubsection{Dequeue}
+\begin{algorithmic}
+	\Function{dequeue}{}
+		\If{$queue.front = \phi$}
+			\State \Call{error}{"Queue Underflow!"}
+		\EndIf
+		
+		\If{$queue.front.next = \phi$}
+			\State \Call{destroy}{front}
+			\State $queue.front = queue.rear = \phi$
+			\State \Return{}
+		\EndIf
+		
+		\State $temp \gets queue.front$
+		\State $queue.front = queue.front.next$
+		\State \Call{foo}{$temp.data$}
+		\State \Call{destroy}{$temp$}
+	\EndFunction
+\end{algorithmic}
+
+\subsubsection{Traverse}
+\begin{algorithmic}
+	\Function{traverse}{}
+		\If{$queue.front = \phi$}
+			\State \Call{error}{"queue empty!"}
+		\EndIf
+	
+		\State $it \gets queue.front$
+		\While{$it \neq \phi$}
+			\State \Call{foo}{$it.data$}
+			\State $it = it.next$
+		\EndWhile
+	\EndFunction
+\end{algorithmic}
+
+\section{Code}
+
+\subsection{Queue using Array}
+
+\subsubsection{q-array.c}
+
+\lstinputlisting[style=myC]{src/p7/q-array.c}
+
+\subsubsection{q-array.output}
+
+\lstinputlisting[]{src/p7/q-array.output}
+
+\subsection{Queue using Linked List}
+
+\subsubsection{q-ll.c}
+
+\lstinputlisting[style=myC]{src/p7/q-ll.c}
+
+\subsubsection{q-ll.output}
+
+\lstinputlisting[]{src/p7/q-ll.output}
+
+\section{Result}
+Queue operations using array and linked list were implemented successfully.

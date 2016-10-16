@@ -1,0 +1,60 @@
+\chapter{Binary Tree Traversal}
+
+\section{Aim}
+
+To implement a program to perform the different types of binary tree traversal.
+
+\section{Algorithm}
+
+Let us assume the Binary Tree to have nodes that contain three fields, data and the 
+references to the left and right child nodes. Let there also be a variable $root$
+to keep track of the root node of the Binary Tree.
+\begin{lstlisting}[style=myC]
+record Node
+{
+	data;
+	Node left;
+	Node right;
+}
+\end{lstlisting}
+
+\subsection{Pre-Order Traversal}
+\begin{algorithmic}
+	\Function{preorder}{Node $root$}
+		\State \Call{print}{$root.data$}
+		\State \Call{preorder}{root.data.left}
+		\State \Call{preorder}{root.data.right}
+	\EndFunction
+\end{algorithmic}
+
+\subsection{In-Order Traversal}
+\begin{algorithmic}
+	\Function{preorder}{Node $root$}
+		\State \Call{preorder}{root.data.left}
+		\State \Call{print}{$root.data$}
+		\State \Call{preorder}{root.data.right}
+	\EndFunction
+\end{algorithmic}
+
+\subsection{Post-Order Traversal}
+\begin{algorithmic}
+	\Function{preorder}{Node $root$}
+		\State \Call{preorder}{root.data.left}
+		\State \Call{preorder}{root.data.right}
+		\State \Call{print}{$root.data$}
+	\EndFunction
+\end{algorithmic}
+
+\section{Code}
+
+\subsubsection{bst-traversal.c}
+
+\lstinputlisting[style=myC]{src/p8/bst-traversal.c}
+
+\subsubsection{bst-traversal.output}
+
+\lstinputlisting[]{src/p8/bst-traversal.output}
+
+\section{Result}
+
+Binary Tree Traversal operations were implemented successfully.
