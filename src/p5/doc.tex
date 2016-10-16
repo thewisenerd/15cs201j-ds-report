@@ -6,14 +6,13 @@ To implement linked list operations on a "Circular Linked List".
 
 \section{Algorithm}
 
-Let the $node$ data structure contain three fields,
+Let the $Node$ data structure contain three fields,
 data and references to the next and previous node. Let there be a variable $L$ to keep track of the last variable.
 
 \begin{lstlisting}[style=myC]
 record Node
 {
 	data;
-	Node prev;
 	Node next;
 }
 record List {
@@ -36,6 +35,31 @@ record List {
 \end{algorithmic}
 
 \subsection{Deletion}
+\begin{algorithmic}
+	\Function{deletebeginning}{}
+		\State $lastNode \gets list.lastNode$
+		\If{$lastNode = \phi$}
+			\State \Return{}
+		\EndIf
+		\State $firstNode \gets lastNode.next$
+		\State $lastNode.next = firstNode.next$
+		\State \Call{destroy}{firstNode}
+	\EndFunction
+	
+	\Function{deleteafter}{Node $node$}
+		\State $t \gets node.next$
+		\If{$t = \phi$}
+			\State \Return
+		\EndIf
+		\State $node.next = t.next$
+		\If{$t == list.lastNode$}
+			\State $list.lastNode = node$
+			\State $node.next = t.next$
+		\EndIf
+		\State \Call{destroy}{t}
+	\EndFunction
+\end{algorithmic}
+
 
 \subsection{Traversal}
 
@@ -44,8 +68,8 @@ record List {
 		\If{$node \neq \phi$}
 			\State $iter \gets node$
 			\Repeat
-				\State \Call{foo}{node.data}
-				\State $node = node.next$
+				\State \Call{foo}{iter.data}
+				\State $iter = iter.next$
 			\Until{$iter \neq node$}
 		\EndIf
 	\EndFunction
@@ -60,10 +84,10 @@ record List {
 		\If{$node \neq \phi$}
 			\State $iter \gets node$
 			\Repeat
-				\If{$node.data = x$}
+				\If{$iter.data = x$}
 					\State $found = true$
 				\EndIf
-				\State $node = node.next$
+				\State $iter = iter.next$
 			\Until{$iter \neq node$ \textbf{and} $found$ \textbf{not} $true$}
 		\EndIf
 		\State \Return $\phi$
@@ -72,13 +96,13 @@ record List {
 
 \section{Code}
 
-\subsubsection{doublylinkedlist.c}
+\subsubsection{circularlinkedlist.c}
 
-% \lstinputlisting[style=myC]{src/p4/doublylinkedlist.c}
+\lstinputlisting[style=myC]{src/p4/doublylinkedlist.c}
 
-\subsubsection{doublylinkedlist.output}
+\subsubsection{circularlinkedlist.output}
 
-% \lstinputlisting[]{src/p4/doublylinkedlist.output}
+\lstinputlisting[]{src/p4/doublylinkedlist.output}
 
 
 \section{Result}
