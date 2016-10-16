@@ -1,0 +1,44 @@
+\chapter{Dijkstra's algorithm}
+
+\section{Aim}
+
+To implement Dijkstra's algorithm for finding the shortest path between 
+nodes in a graph.
+
+%%
+%% DISCLAIMER: i have not the slightest clue what Dijsktra's algorithm is
+%% or how it works
+%%
+%% thank whoever posted this:
+%% http://www.geeksforgeeks.org/greedy-algorithms-set-6-dijkstras-shortest-path-algorithm/
+
+\section{Algorithm}
+
+%% as i said, no f'king clue. lemme just copy paste stuff. thanks wikipedia.
+
+\begin{enumerate}
+	\item Assign to every node a tentative distance value: set it to zero for the
+	initial node and $\infty$ for all other nodes
+	\item Set initial node as current. Mark all other nodes as unvisited. Create a 
+	set of unvisited nodes called the \textit{unvisited} set.
+	\item For the current node, consider all of it's unvisited neighbors and calculate
+	their \textit{tentative} distances. Compare the newly calculated tentative distance to the current assigned value and assign the smaller one.
+	\item when done considering all neighbors of the current node, mark current node
+	as visited and remove it from the unvisited set. A visited node will never be
+	checked again.
+	\item If the destination node has been marked visited (when planning a route between two specific nodes) or if the smallest tentative distance among the nodes in the unvisited set is infinity (when planning a complete traversal; occurs when there is no connection between the initial node and remaining unvisited nodes), then stop. The algorithm has finished. % :(
+	\item Otherwise, select the unvisited node that is marked with the smallest tentative distance, set it as the new "current node", and go back to step 3.
+\end{enumerate}
+
+\section{Code}
+
+\subsubsection{dijkstra.c}
+
+\lstinputlisting[style=myC]{src/p10/dijkstra.c}
+
+\subsubsection{dijkstra.output}
+
+\lstinputlisting[style=myC]{src/p10/dijkstra.output}
+
+\section{Result}
+Dijkstra's algorithm was successfully implemented.
