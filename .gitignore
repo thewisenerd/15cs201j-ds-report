@@ -4,3 +4,35 @@
 *.synctex.gz
 *.toc
 *.output
+
+# binary files
+src/p1/binarysearch
+src/p1/linearsearch
+src/p10/dijkstra
+src/p2/bubblesort
+src/p2/insertionsort
+src/p3/singlylinkedlist
+src/p4/doublylinkedlist
+src/p5/circularlinkedlist
+src/p6/stack-array
+src/p6/stack-ll
+src/p7/q-array
+src/p7/q-ll
+src/p8/bst-traversal
+src/p9/bst-operations
+
+# output files
+src/p1/binarysearch.output
+src/p1/linearsearch.output
+src/p10/dijkstra.output
+src/p2/bubblesort.output
+src/p2/insertionsort.output
+src/p3/singlylinkedlist.output
+src/p4/doublylinkedlist.output
+src/p5/circularlinkedlist.output
+src/p6/stack-array.output
+src/p6/stack-ll.output
+src/p7/q-array.output
+src/p7/q-ll.output
+src/p8/bst-traversal.output
+src/p9/bst-operations.output
