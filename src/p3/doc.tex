@@ -26,7 +26,7 @@ record List {
 
 \subsection{Insertion}
 
-\begin{algorithmic}
+\begin{algorithmic}[1]
 	\Function{insertBeginning}{List $list$, Node $newNode$}
 		\State $newNode.next = list.firstNode$
 		\State $list.firstNode = newNode$
@@ -40,7 +40,7 @@ record List {
 
 \subsection{Deletion}
 
-\begin{algorithmic}
+\begin{algorithmic}[1]
 	\Function{deleteBeginning}{List $list$}
 		\State $temp \gets list.firstNode$
 		\State $list.firstNode = temp.next$
@@ -56,7 +56,7 @@ record List {
 
 \subsection{Traversal}
 
-\begin{algorithmic}
+\begin{algorithmic}[1]
 	\Function{traverse}{List $list$}
 		\State $node \gets list.firstNode$
 		\While{$node$ \textbf{not} $\phi$}
@@ -68,7 +68,7 @@ record List {
 
 \subsection{Searching}
 
-\begin{algorithmic}
+\begin{algorithmic}[1]
 	\Function{search}{data $x$, List $list$}
 		\State $found \gets false$
 		\State $node \gets list.firstNode$

@@ -19,7 +19,7 @@ record Node
 \end{lstlisting}
 
 \subsection{Pre-Order Traversal}
-\begin{algorithmic}
+\begin{algorithmic}[1]
 	\Function{preorder}{Node $root$}
 		\State \Call{print}{$root.data$}
 		\State \Call{preorder}{root.data.left}
@@ -28,7 +28,7 @@ record Node
 \end{algorithmic}
 
 \subsection{In-Order Traversal}
-\begin{algorithmic}
+\begin{algorithmic}[1]
 	\Function{preorder}{Node $root$}
 		\State \Call{preorder}{root.data.left}
 		\State \Call{print}{$root.data$}
@@ -37,7 +37,7 @@ record Node
 \end{algorithmic}
 
 \subsection{Post-Order Traversal}
-\begin{algorithmic}
+\begin{algorithmic}[1]
 	\Function{preorder}{Node $root$}
 		\State \Call{preorder}{root.data.left}
 		\State \Call{preorder}{root.data.right}

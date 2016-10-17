@@ -23,7 +23,7 @@ record List {
 
 \subsection{Insertion}
 
-\begin{algorithmic}
+\begin{algorithmic}[1]
 	\Function{insertafter}{Node $node$, Node $newNode$}
 		\If{$node = \phi$}
 			\State $newNode.next = newNode$
@@ -35,7 +35,7 @@ record List {
 \end{algorithmic}
 
 \subsection{Deletion}
-\begin{algorithmic}
+\begin{algorithmic}[1]
 	\Function{deletebeginning}{}
 		\State $lastNode \gets list.lastNode$
 		\If{$lastNode = \phi$}
@@ -63,7 +63,7 @@ record List {
 
 \subsection{Traversal}
 
-\begin{algorithmic}
+\begin{algorithmic}[1]
 	\Function{iterate}{Node $node$}
 		\If{$node \neq \phi$}
 			\State $iter \gets node$
@@ -78,7 +78,7 @@ record List {
 
 \subsection{Searching}
 
-\begin{algorithmic}
+\begin{algorithmic}[1]
 	\Function{search}{Node $node$, data $x$}
 		\State $found \gets false$
 		\If{$node \neq \phi$}

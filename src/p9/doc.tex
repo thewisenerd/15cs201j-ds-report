@@ -21,7 +21,7 @@ record Node
 
 \subsection{Insertion}
 
-\begin{algorithmic}
+\begin{algorithmic}[1]
 	\Function{insert}{Node $n$, $k$}
 		\If{$n = \phi$}
 			\State \Return \Call{getnewnode}{k}
@@ -36,7 +36,7 @@ record Node
 \end{algorithmic}
 
 \subsection{Deletion}
-\begin{algorithmic}
+\begin{algorithmic}[1]
 	\Function{minvn}{Node $n$}
 		\State $c \gets n$
 		\While{$c.left \neq \phi$}

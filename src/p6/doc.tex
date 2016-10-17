@@ -20,7 +20,7 @@ record stack
 
 
 \subsubsection{Push}
-\begin{algorithmic}
+\begin{algorithmic}[1]
 	\Function{push}{$x$}
 		\If{$stack.top == MAX$}
 			\State \Call{error}{"Stack Overflow!}
@@ -31,7 +31,7 @@ record stack
 \end{algorithmic}
 
 \subsubsection{Pop}
-\begin{algorithmic}
+\begin{algorithmic}[1]
 	\Function{pop}{}
 		\If{$stack.top == 0$}
 			\State \Call{error}{"Stack Underflow!}
@@ -44,7 +44,7 @@ record stack
 \end{algorithmic}
 
 \subsubsection{Traverse}
-\begin{algorithmic}
+\begin{algorithmic}[1]
 	\Function{traverse}{}
 		\If{$stack.top == 0$}
 			\State \Call{error}{"stack empty!"}
@@ -80,7 +80,7 @@ record Stack
 \end{lstlisting}
 
 \subsubsection{Push}
-\begin{algorithmic}
+\begin{algorithmic}[1]
 	\Function{push}{$newNode$}
 		\If{$stack.top \neq \phi$}
 			\State $newNode.next = stack.top$
@@ -90,7 +90,7 @@ record Stack
 \end{algorithmic}
 
 \subsubsection{Pop}
-\begin{algorithmic}
+\begin{algorithmic}[1]
 	\Function{pop}{}
 		\If{$stack.top = \phi$}
 			\State \Call{error}{"Stack Underflow!"}
@@ -105,7 +105,7 @@ record Stack
 \end{algorithmic}
 
 \subsubsection{Traverse}
-\begin{algorithmic}
+\begin{algorithmic}[1]
 	\Function{traverse}{}
 		\If{$stack.top = \phi$}
 			\State \Call{error}{"stack empty!"}

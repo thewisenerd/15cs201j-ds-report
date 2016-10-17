@@ -20,7 +20,7 @@ record queue
 \end{lstlisting}
 
 \subsubsection{Enqueue}
-\begin{algorithmic}
+\begin{algorithmic}[1]
 	\Function{enqueue}{$x$}
 		\If{$queue.rear - queue.front == MAX-1$}
 			\State \Call{error}{"Queue Overflow!}
@@ -34,7 +34,7 @@ record queue
 \end{algorithmic}
 
 \subsubsection{Dequeue}
-\begin{algorithmic}
+\begin{algorithmic}[1]
 	\Function{dequeue}{}
 		\If{$queue.front = -1$ \textbf{or} $queue.front > queue.rear$}
 			\State \Call{error}{"Queue Underflow!"}
@@ -47,7 +47,7 @@ record queue
 \end{algorithmic}
 
 \subsubsection{Traverse}
-\begin{algorithmic}
+\begin{algorithmic}[1]
 	\Function{traverse}{}
 		\If{$queue.front = -1$ \textbf{or} $queue.front > queue.rear$}
 			\State \Call{error}{"Queue Empty!"}
@@ -83,7 +83,7 @@ record Queue
 \end{lstlisting}
 
 \subsubsection{Enqueue}
-\begin{algorithmic}
+\begin{algorithmic}[1]
 	\Function{enqueue}{$newNode$}
 		\If{$queue.rear = \phi$}
 			\State $queue.front = queue.rear = newNode$
@@ -96,7 +96,7 @@ record Queue
 \end{algorithmic}
 
 \subsubsection{Dequeue}
-\begin{algorithmic}
+\begin{algorithmic}[1]
 	\Function{dequeue}{}
 		\If{$queue.front = \phi$}
 			\State \Call{error}{"Queue Underflow!"}
@@ -116,7 +116,7 @@ record Queue
 \end{algorithmic}
 
 \subsubsection{Traverse}
-\begin{algorithmic}
+\begin{algorithmic}[1]
 	\Function{traverse}{}
 		\If{$queue.front = \phi$}
 			\State \Call{error}{"queue empty!"}

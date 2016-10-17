@@ -28,7 +28,7 @@ record List {
 
 \subsection{Insertion}
 
-\begin{algorithmic}
+\begin{algorithmic}[1]
 	\Function{insertAfter}{List $list$, Node $node$, Node $newNode$}
 		\State $newNode.prev = node$
 		\If{$node.next = \phi$}
@@ -70,7 +70,7 @@ record List {
 
 \subsection{Deletion}
 
-\begin{algorithmic}
+\begin{algorithmic}[1]
 	\Function{delete}{List $list$, Node $node$}
 		\If{$node.prev = \phi$}
 			\State $list.firstNode = node.next$
@@ -87,7 +87,7 @@ record List {
 
 \subsection{Traversal}
 
-\begin{algorithmic}
+\begin{algorithmic}[1]
 	\Function{traverse}{List $list$}
 		\State $node \gets list.firstNode$
 		\While{$node$ \textbf{not} $\phi$}
@@ -99,7 +99,7 @@ record List {
 
 \subsection{Searching}
 
-\begin{algorithmic}
+\begin{algorithmic}[1]
 	\Function{search}{data $x$, List $list$}
 		\State $found \gets false$
 		\State $node \gets list.firstNode$
