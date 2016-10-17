@@ -2,13 +2,15 @@
 
 \section{Aim}
 
+{\Large\color{white}
 To implement program(s) to perform queue operations using arrays and linked lists.
+\color{black}}
 
 \section{Algorithm}
 
 \subsection{Queue using Array}
 
-\subsubsection
+{\Large\color{white}
 Let the $queue$ data structure contain the array $Q$ of size $MAX$ and the variables $front$ and $rear$ to keep track of the queue elements.
 \begin{lstlisting}[style=myC]
 record queue
@@ -18,8 +20,10 @@ record queue
 	rear;
 }
 \end{lstlisting}
+\color{black}}
 
 \subsubsection{Enqueue}
+{\Large\color{white}
 \begin{algorithmic}[1]
 	\Function{enqueue}{$x$}
 		\If{$queue.rear - queue.front == MAX-1$}
@@ -32,8 +36,10 @@ record queue
 		\State $queue.Q[queue.rear] = x$
 	\EndFunction
 \end{algorithmic}
+\color{black}}
 
 \subsubsection{Dequeue}
+{\Large\color{white}
 \begin{algorithmic}[1]
 	\Function{dequeue}{}
 		\If{$queue.front = -1$ \textbf{or} $queue.front > queue.rear$}
@@ -45,8 +51,10 @@ record queue
 		\State \Return{$temp$}
 	\EndFunction
 \end{algorithmic}
+\color{black}}
 
 \subsubsection{Traverse}
+{\Large\color{white}
 \begin{algorithmic}[1]
 	\Function{traverse}{}
 		\If{$queue.front = -1$ \textbf{or} $queue.front > queue.rear$}
@@ -60,8 +68,10 @@ record queue
 		\EndWhile
 	\EndFunction
 \end{algorithmic}
+\color{black}}
 
 \subsection{Queue using Linked List}
+{\Large\color{white}
 Let the $node$ data structure contain two fields,
 data and the reference to the next node. Let there
 also be the variables $front$ and $rear$ to keep track of the
@@ -81,8 +91,10 @@ record Queue
 	Node rear;
 }
 \end{lstlisting}
+\color{black}}
 
 \subsubsection{Enqueue}
+{\Large\color{white}
 \begin{algorithmic}[1]
 	\Function{enqueue}{$newNode$}
 		\If{$queue.rear = \phi$}
@@ -94,8 +106,10 @@ record Queue
 
 	\EndFunction
 \end{algorithmic}
+\color{black}}
 
 \subsubsection{Dequeue}
+{\Large\color{white}
 \begin{algorithmic}[1]
 	\Function{dequeue}{}
 		\If{$queue.front = \phi$}
@@ -114,8 +128,10 @@ record Queue
 		\State \Call{destroy}{$temp$}
 	\EndFunction
 \end{algorithmic}
+\color{black}}
 
 \subsubsection{Traverse}
+{\Large\color{white}
 \begin{algorithmic}[1]
 	\Function{traverse}{}
 		\If{$queue.front = \phi$}
@@ -129,6 +145,7 @@ record Queue
 		\EndWhile
 	\EndFunction
 \end{algorithmic}
+\color{black}}
 
 \section{Code}
 
@@ -152,5 +169,10 @@ record Queue
 
 \lstinputlisting[]{src/p7/q-ll.output}
 
+\vfill
+
 \section{Result}
+{\Large\color{white}
 Queue operations using array and linked list were implemented successfully.
+\color{black}}
+\clearpage

@@ -2,10 +2,13 @@
 
 \section{Aim}
 
+{\Large\color{white}
 To implement linked list operations on a "Doubly Linked List".
+\color{black}}
 
 \section{Algorithm}
 
+{\Large\color{white}
 Let the $node$ data structure contain three fields,
 data and references to the next and previous node. Let there
 also be the variables $firstNode$ and $lastNode$ to keep track of the
@@ -25,9 +28,11 @@ record List {
 }
 
 \end{lstlisting}
+\color{black}}
 
 \subsection{Insertion}
 
+{\Large\color{white}
 \begin{algorithmic}[1]
 	\Function{insertAfter}{List $list$, Node $node$, Node $newNode$}
 		\State $newNode.prev = node$
@@ -67,9 +72,11 @@ record List {
 		\State $node.next = newNode$
 	\EndFunction
 \end{algorithmic}
+\color{black}}
 
 \subsection{Deletion}
 
+{\Large\color{white}
 \begin{algorithmic}[1]
 	\Function{delete}{List $list$, Node $node$}
 		\If{$node.prev = \phi$}
@@ -84,9 +91,11 @@ record List {
 		\EndIf
 	\EndFunction
 \end{algorithmic}
+\color{black}}
 
 \subsection{Traversal}
 
+{\Large\color{white}
 \begin{algorithmic}[1]
 	\Function{traverse}{List $list$}
 		\State $node \gets list.firstNode$
@@ -96,9 +105,11 @@ record List {
 		\EndWhile
 	\EndFunction
 \end{algorithmic}
+\color{black}}
 
 \subsection{Searching}
 
+{\Large\color{white}
 \begin{algorithmic}[1]
 	\Function{search}{data $x$, List $list$}
 		\State $found \gets false$
@@ -111,6 +122,7 @@ record List {
 		\State \Return{$found$}
 	\EndFunction
 \end{algorithmic}
+\color{black}}
 
 \section{Code}
 
@@ -122,6 +134,11 @@ record List {
 
 \lstinputlisting[]{src/p4/doublylinkedlist.output}
 
+\vfill
 
 \section{Result}
+{\Large\color{white}
 Doubly Linked List operations were implemented successfully.
+\color{black}}
+
+\clearpage

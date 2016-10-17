@@ -2,10 +2,13 @@
 
 \section{Aim}
 
+{\Large\color{white}
 To implement linked list operations on a "Singly Linked List".
+\color{black}}
 
 \section{Algorithm}
 
+{\Large\color{white}
 Let the $node$ data structure contain two fields,
 data and the reference to the next node. Let there
 also be a variable $firstNode$ to keep track of the
@@ -23,9 +26,11 @@ record List {
 }
 
 \end{lstlisting}
+\color{black}}
 
 \subsection{Insertion}
 
+{\Large\color{white}
 \begin{algorithmic}[1]
 	\Function{insertBeginning}{List $list$, Node $newNode$}
 		\State $newNode.next = list.firstNode$
@@ -37,9 +42,11 @@ record List {
 		\State $node.next = newNode$
 	\EndFunction
 \end{algorithmic}
+\color{black}}
 
 \subsection{Deletion}
 
+{\Large\color{white}
 \begin{algorithmic}[1]
 	\Function{deleteBeginning}{List $list$}
 		\State $temp \gets list.firstNode$
@@ -53,9 +60,11 @@ record List {
 		\State \Call{destroy}{temp}
 	\EndFunction
 \end{algorithmic}
+\color{black}}
 
 \subsection{Traversal}
 
+{\Large\color{white}
 \begin{algorithmic}[1]
 	\Function{traverse}{List $list$}
 		\State $node \gets list.firstNode$
@@ -65,9 +74,11 @@ record List {
 		\EndWhile
 	\EndFunction
 \end{algorithmic}
+\color{black}}
 
 \subsection{Searching}
 
+{\Large\color{white}
 \begin{algorithmic}[1]
 	\Function{search}{data $x$, List $list$}
 		\State $found \gets false$
@@ -80,6 +91,7 @@ record List {
 		\State \Return{$found$}
 	\EndFunction
 \end{algorithmic}
+\color{black}}
 
 \section{Code}
 
@@ -91,6 +103,11 @@ record List {
 
 \lstinputlisting[]{src/p3/singlylinkedlist.output}
 
+\vfill
 
 \section{Result}
+{\Large\color{white}
 Singly Linked List operations were implemented successfully.
+\color{black}}
+
+\clearpage

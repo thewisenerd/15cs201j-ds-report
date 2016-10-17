@@ -1,12 +1,12 @@
 \chapter{Binary Search Tree}
 
 \section{Aim}
-
+{\Large\color{white}
 To implement a program to perform different Binary Search Tree operations on
 a Binary Tree.
-
+\color{black}}
 \section{Algorithm}
-
+{\Large\color{white}
 Let us assume the Binary Search Tree to have nodes that contain three fields, data and the
 references to the left and right child nodes. Let there also be a variable $root$
 to keep track of the root node of the Binary Tree, which is $\phi$ when the tree is empty.
@@ -18,9 +18,10 @@ record Node
 	Node right;
 }
 \end{lstlisting}
+\color{black}}
 
 \subsection{Insertion}
-
+{\Large\color{white}
 \begin{algorithmic}[1]
 	\Function{insert}{Node $n$, $k$}
 		\If{$n = \phi$}
@@ -34,8 +35,10 @@ record Node
 		\State \Return{$n$}
 	\EndFunction
 \end{algorithmic}
+\color{black}}
 
 \subsection{Deletion}
+{\Large\color{white}
 \begin{algorithmic}[1]
 	\Function{minvn}{Node $n$}
 		\State $c \gets n$
@@ -71,6 +74,7 @@ record Node
 		\State \Return $r$
 	\EndFunction
 \end{algorithmic}
+\color{black}}
 
 \section{Code}
 
@@ -82,5 +86,11 @@ record Node
 
 \lstinputlisting[style=myC]{src/p9/bst-operations.output}
 
+\vfill
+
 \section{Result}
+{\Large\color{white}
 Binary Search Tree operations were successfully performed.
+\color{black}}
+
+\clearpage

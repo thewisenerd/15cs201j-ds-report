@@ -2,24 +2,26 @@
 
 \section{Aim}
 
+{\Large\color{white}
 To implement program(s) to perform stack operations using arrays and linked lists.
+\color{black}}
 
 \section{Algorithm}
 
 \subsection{Stack using Array}
 
-\subsubsection
+{\Large\color{white}
 Let the $stack$ data structure contain the array $S$ of size $MAX$ and the variable $top$ to keep track of the stack header.
 \begin{lstlisting}[style=myC]
-record stack
-{
+record stack {
 	S[MAX];
 	top;
 }
 \end{lstlisting}
-
+\color{black}}
 
 \subsubsection{Push}
+{\Large\color{white}
 \begin{algorithmic}[1]
 	\Function{push}{$x$}
 		\If{$stack.top == MAX$}
@@ -29,8 +31,10 @@ record stack
 		\State $stack.S[stack.top] = x$
 	\EndFunction
 \end{algorithmic}
+\color{black}}
 
 \subsubsection{Pop}
+{\Large\color{white}
 \begin{algorithmic}[1]
 	\Function{pop}{}
 		\If{$stack.top == 0$}
@@ -42,8 +46,10 @@ record stack
 		\State \Return{$temp$}
 	\EndFunction
 \end{algorithmic}
+\color{black}}
 
 \subsubsection{Traverse}
+{\Large\color{white}
 \begin{algorithmic}[1]
 	\Function{traverse}{}
 		\If{$stack.top == 0$}
@@ -58,8 +64,11 @@ record stack
 
 	\EndFunction
 \end{algorithmic}
+\color{black}}
 
 \subsection{Stack using Linked List}
+
+{\Large\color{white}
 Let the $node$ data structure contain two fields,
 data and the reference to the next node. Let there
 also be a variable $top$ to keep track of the
@@ -67,19 +76,19 @@ first element in the stack, which is $\phi$ when the stack
 is empty.
 
 \begin{lstlisting}[style=myC]
-record Node
-{
+record Node {
 	data;
 	Node next;
 }
 
-record Stack
-{
+record Stack {
 	Node top
 }
 \end{lstlisting}
+\color{black}}
 
 \subsubsection{Push}
+{\Large\color{white}
 \begin{algorithmic}[1]
 	\Function{push}{$newNode$}
 		\If{$stack.top \neq \phi$}
@@ -88,8 +97,10 @@ record Stack
 		\State $stack.top = newNode$
 	\EndFunction
 \end{algorithmic}
+\color{black}}
 
 \subsubsection{Pop}
+{\Large\color{white}
 \begin{algorithmic}[1]
 	\Function{pop}{}
 		\If{$stack.top = \phi$}
@@ -103,8 +114,10 @@ record Stack
 		\State \Return{$data$}
 	\EndFunction
 \end{algorithmic}
+\color{black}}
 
 \subsubsection{Traverse}
+{\Large\color{white}
 \begin{algorithmic}[1]
 	\Function{traverse}{}
 		\If{$stack.top = \phi$}
@@ -118,6 +131,7 @@ record Stack
 		\EndWhile
 	\EndFunction
 \end{algorithmic}
+\color{black}}
 
 \section{Code}
 
@@ -141,5 +155,11 @@ record Stack
 
 \lstinputlisting[]{src/p6/stack-ll.output}
 
+\vfill
+
 \section{Result}
+{\Large\color{white}
 Stack operations using array and linked list were implemented successfully.
+\color{black}}
+
+\clearpage

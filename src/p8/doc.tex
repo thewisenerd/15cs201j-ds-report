@@ -2,23 +2,26 @@
 
 \section{Aim}
 
+{\Large\color{white}
 To implement a program to perform the different types of binary tree traversal.
+\color{black}}
 
 \section{Algorithm}
 
+{\Large\color{white}
 Let us assume the Binary Tree to have nodes that contain three fields, data and the
 references to the left and right child nodes. Let there also be a variable $root$
 to keep track of the root node of the Binary Tree.
 \begin{lstlisting}[style=myC]
-record Node
-{
+record Node {
 	data;
-	Node left;
-	Node right;
+	Node left, right;
 }
 \end{lstlisting}
+\color{black}}
 
 \subsection{Pre-Order Traversal}
+{\Large\color{white}
 \begin{algorithmic}[1]
 	\Function{preorder}{Node $root$}
 		\State \Call{print}{$root.data$}
@@ -26,8 +29,10 @@ record Node
 		\State \Call{preorder}{root.data.right}
 	\EndFunction
 \end{algorithmic}
+\color{black}}
 
 \subsection{In-Order Traversal}
+{\Large\color{white}
 \begin{algorithmic}[1]
 	\Function{preorder}{Node $root$}
 		\State \Call{preorder}{root.data.left}
@@ -35,8 +40,10 @@ record Node
 		\State \Call{preorder}{root.data.right}
 	\EndFunction
 \end{algorithmic}
+\color{black}}
 
 \subsection{Post-Order Traversal}
+{\Large\color{white}
 \begin{algorithmic}[1]
 	\Function{preorder}{Node $root$}
 		\State \Call{preorder}{root.data.left}
@@ -44,6 +51,7 @@ record Node
 		\State \Call{print}{$root.data$}
 	\EndFunction
 \end{algorithmic}
+\color{black}}
 
 \section{Code}
 
@@ -55,6 +63,11 @@ record Node
 
 \lstinputlisting[]{src/p8/bst-traversal.output}
 
-\section{Result}
+\vfill
 
+\section{Result}
+{\Large\color{white}
 Binary Tree Traversal operations were implemented successfully.
+\color{black}}
+
+\clearpage
